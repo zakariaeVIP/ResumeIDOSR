@@ -2,12 +2,13 @@
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(to right, #1f3b4d, #6b6fa1);
+  background: url('background.jpg') no-repeat center center/cover;
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 .container {
@@ -55,4 +56,39 @@ h2 {
 
 p {
   font-size: 1rem;
+}
+
+/* Résume Button */
+.resume-button a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+}
+
+.resume-button a:hover {
+  background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+  margin-top: 30px;
+  font-size: 1rem;
+}
+
+.author {
+  background: linear-gradient(90deg, red, green, blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 3s infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0%; }
+  100% { background-position: 100%; }
 }
