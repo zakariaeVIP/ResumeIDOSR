@@ -2,7 +2,9 @@
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background: url('background.jpg') no-repeat center center/cover;
+  background: linear-gradient(45deg, rgb(255, 0, 0), rgb(0, 255, 0), rgb(0, 0, 255));
+  background-size: 300% 300%;
+  animation: gradientShift 8s infinite alternate;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -85,10 +87,15 @@ footer {
   background: linear-gradient(90deg, red, green, blue);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gradient 3s infinite;
+  animation: gradientText 3s infinite;
 }
 
-@keyframes gradient {
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes gradientText {
   0% { background-position: 0%; }
   100% { background-position: 100%; }
 }
