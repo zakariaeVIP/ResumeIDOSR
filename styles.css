@@ -37,7 +37,7 @@ h1 {
   border-radius: 15px;
   text-align: center;
   width: 220px;
-  transition: transform 0.3s, background 0.3s;
+  transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
   text-decoration: none;
   color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -46,6 +46,7 @@ h1 {
 .card:hover {
   transform: scale(1.1);
   background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .card i {
@@ -62,21 +63,26 @@ p {
   font-size: 1rem;
 }
 
-/* Résume Button */
+/* Résume Button with RGB Gradient and Glow */
 .resume-button a {
   display: inline-block;
   margin-top: 30px;
   padding: 15px 30px;
-  background-color: #007bff;
+  background: linear-gradient(90deg, red, green, blue);
+  background-size: 300% 300%;
   color: #fff;
   border-radius: 25px;
   text-decoration: none;
   font-size: 1.2rem;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  animation: rgbShift 5s infinite alternate;
 }
 
+/* Hover Effect: Glow and Scale */
 .resume-button a:hover {
-  background-color: #0056b3;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 0 0 30px rgba(0, 132, 255, 0.6);
 }
 
 /* Footer */
@@ -92,7 +98,13 @@ footer {
   animation: gradientText 3s infinite;
 }
 
+/* Animations */
 @keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes rgbShift {
   0% { background-position: 0% 50%; }
   100% { background-position: 100% 50%; }
 }
